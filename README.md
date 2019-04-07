@@ -55,12 +55,11 @@ $$
 	
 词的条件概率用极大似然估计来计算（说白了就是数频数）。在此就不过多赘述了。
 
-### One-Word模型
+### <center>One-Word模型</center>
 
 **One-Word**是用神经网络来实现**N-Gram**（$n=2$时）。即**N-Gram**是思想，而**One-Word**模型是实现方法。即一个用**one-hot**编码的词作为输入，通过第一个权重矩阵得到隐藏层，再通过第二个权重矩阵的到输出层的前身，该前身再做**Softmax**得到输出端的向量表示。
 
-[one—word模型]:picture/one-word.png
-![one—word模型]
+![one-word](picture/one-word.png)
 
 设：词汇量的大小为$V$，隐藏层的大小为$N$。输入向量是一个**one-hot**编码的向量，**one-hot**编码的向量表示为$(x_1,x_2,…,x_v)$，其中只有一个$x_k$为1，其余的均为0。姑且认为$X(V \times 1), h(N \times 1), Y(V \times 1)$都是列向量
 
@@ -162,8 +161,7 @@ cbow的基本思想是用中心词的上下文的c个词来预测中心词。
 
 连续词袋模型模型相当于是**One-Word**模型的补充，**One-Word**是一个输入，一个输出，**CBOW**是c个输入，1个输出。
 
-[cbow模型]:picture/cbow.jpg
-![cbow模型]
+![cbow模型](picture/cbow.jpg)
 
 $\mathbf{X}_{1 k}$到$\mathbf{X}_{c k}$ 是上下文从第一个到第C个单词的one-hot编码，这C个one-hot编码通过相应位置加和求平均的方法得到一个$1 \times V$的向量，该向量再乘以我们期望得到的第一个矩阵$\mathrm{W}_{\mathrm{V} \times \mathrm{N}}$来得到隐藏层的向量$h_i$（一个$1 \times N$的向量），即
 
@@ -182,7 +180,7 @@ $$
 =-U_{j^{*}}+\log \left(\sum_{j}^{V} e^{u_{i}}\right)\\
 =-\mathrm{V}_{\mathrm{w}_{\mathrm{o}}}^{\prime T} \cdot h+\log \left(\sum_{i=1}^{V} e^{v_{v_{i}} T} \cdot h\right)
 $$
-    
+
 然后和上面one-word模型更新两个矩阵的方法类似  都是对相应的矩阵的元素求导得到梯度来更新矩阵。
 
 $$
@@ -207,8 +205,7 @@ $$
 
 Skip-Gram模型可以看成是与CBOW模型相反的，即用一个中心词来推测其附近的c个上下文（注：得到的c个上下文不考虑与中心词之间的距离的影响）。
 
-[skip-gram模型]:picture/skip-gram.png
-![skip-gram模型]
+![cbow](picture/cbow.jpg)
 
 * **数学推导**
 

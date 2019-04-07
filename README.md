@@ -39,9 +39,13 @@ N-Gram模型算是对上面词袋模型的补充吧。词袋模型认为文本�
 词袋模型的基本思想是用概率来表示上下文之间的关系
 
 一个经典的例子：假设我们有一个由n个词组成的句子
-<p>
+$$
 \mathrm { s } = \left( w _ { 1 } , w _ { 2 } , w _ { 3 } , \ldots \ldots w _ { \mathrm { n } } \right)
-<p>
+$$
+	
+<a href="https://www.codecogs.com/eqnedit.php?latex=\left(&space;\begin{array}{cccc}{\mathrm{W}_{11}}&space;&&space;{\mathrm{W}_{12}}&space;&&space;{\dots}&space;&&space;{\mathrm{W}_{1&space;n}}&space;\\&space;{\mathrm{W}_{21}}&space;&&space;{\mathrm{W}_{22}}&space;&&space;{\dots}&space;&&space;{\mathrm{W}_{2&space;n}}&space;\\&space;{\cdots}&space;&&space;{\cdots}&space;&&space;{\cdots}&space;&&space;{\cdots}&space;\\&space;{\mathrm{W}_{\mathrm{vl}}}&space;&&space;{\mathrm{W}_{\mathrm{v}&space;2}}&space;&&space;{\dots}&space;&&space;{\mathrm{W}_{\mathrm{vn}}}\end{array}\right)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\left(&space;\begin{array}{cccc}{\mathrm{W}_{11}}&space;&&space;{\mathrm{W}_{12}}&space;&&space;{\dots}&space;&&space;{\mathrm{W}_{1&space;n}}&space;\\&space;{\mathrm{W}_{21}}&space;&&space;{\mathrm{W}_{22}}&space;&&space;{\dots}&space;&&space;{\mathrm{W}_{2&space;n}}&space;\\&space;{\cdots}&space;&&space;{\cdots}&space;&&space;{\cdots}&space;&&space;{\cdots}&space;\\&space;{\mathrm{W}_{\mathrm{vl}}}&space;&&space;{\mathrm{W}_{\mathrm{v}&space;2}}&space;&&space;{\dots}&space;&&space;{\mathrm{W}_{\mathrm{vn}}}\end{array}\right)" title="\left( \begin{array}{cccc}{\mathrm{W}_{11}} & {\mathrm{W}_{12}} & {\dots} & {\mathrm{W}_{1 n}} \\ {\mathrm{W}_{21}} & {\mathrm{W}_{22}} & {\dots} & {\mathrm{W}_{2 n}} \\ {\cdots} & {\cdots} & {\cdots} & {\cdots} \\ {\mathrm{W}_{\mathrm{vl}}} & {\mathrm{W}_{\mathrm{v} 2}} & {\dots} & {\mathrm{W}_{\mathrm{vn}}}\end{array}\right)" /></a>	
+	
+
 如何衡量它的概率呢？让我们假设，每一个单词$w_i$都要依赖于从第一个单词$w_i$到它之前一个单词$w_{i-1}$的影响:
 $$
 \begin{array} { c } 

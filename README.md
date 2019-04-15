@@ -168,7 +168,7 @@ cbow的基本思想是用中心词的上下文的c个词来预测中心词。
 
 连续词袋模型模型相当于是**One-Word**模型的补充，**One-Word**是一个输入，一个输出，**CBOW**是c个输入，1个输出。
 
-![cbow模型](picture/cbow.jpg)
+![cbow模型](picture/cbow.png)
 
 $\mathbf{X}_{1 k}$到$\mathbf{X}_{c k}$ 是上下文从第一个到第C个单词的one-hot编码，这C个one-hot编码通过相应位置加和求平均的方法得到一个$1 \times V$的向量，该向量再乘以我们期望得到的第一个矩阵$\mathrm{W}_{\mathrm{V} \times \mathrm{N}}$来得到隐藏层的向量$h_i$（一个$1 \times N$的向量），即
 
@@ -212,7 +212,7 @@ $$
 
 Skip-Gram模型可以看成是与CBOW模型相反的，即用一个中心词来推测其附近的c个上下文（注：得到的c个上下文不考虑与中心词之间的距离的影响）。
 
-![cbow](picture/cbow.jpg)
+![cbow](picture/cbow.png)
 
 * **数学推导**
 

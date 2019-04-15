@@ -65,7 +65,7 @@ $$
 
 **One-Word**是用神经网络来实现**N-Gram**（$n=2​$时）。即**N-Gram**是思想，而**One-Word**模型是实现方法。即一个用**one-hot**编码的词作为输入，通过第一个权重矩阵得到隐藏层，再通过第二个权重矩阵的到输出层的前身，该前身再做**Softmax**得到输出端的向量表示。
 
-![one-word](picture/one-word.png)
+![one-word](https://github.com/VincentGaoHJ/Insight_into_Word2Vec/blob/master/picture/one-word.png)
 
 
 设：词汇量的大小为$V$，隐藏层的大小为$N$。输入向量是一个**one-hot**编码的向量，**one-hot**编码的向量表示为$(x_1,x_2,…,x_v)$，其中只有一个$x_k$为1，其余的均为0。姑且认为$X(V \times 1), h(N \times 1), Y(V \times 1)$都是列向量
@@ -212,7 +212,7 @@ $$
 
 Skip-Gram模型可以看成是与CBOW模型相反的，即用一个中心词来推测其附近的c个上下文（注：得到的c个上下文不考虑与中心词之间的距离的影响）。
 
-![cbow](https://github.com/VincentGaoHJ/Insight_into_Word2Vec/blob/master/picture/skip-gram.jpg)
+![skip-gram](https://github.com/VincentGaoHJ/Insight_into_Word2Vec/blob/master/picture/skip-gram.jpg)
 
 * **数学推导**
 
